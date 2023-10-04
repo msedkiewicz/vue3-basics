@@ -18,8 +18,8 @@
     </header>
     <section id="user-goal">
       <h2>My Course Goal</h2>
-      <p>{{ courseGoal }}</p>
-      <p>Learn More <a href="#">about Vue</a></p>
+      <p>{{ courseGoal }}</p> <!-- {{ }} syntax only between HTML tags like <p></p> -->
+      <p>Learn More <a v-bind:href="vueLink">about Vue</a></p> <!-- v-bind - inside HTML tags -->
     </section>
   </body>
 </html>
