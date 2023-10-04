@@ -18,8 +18,11 @@
     </header>
     <section id="user-goal">
       <h2>My Course Goal</h2>
-      <p>{{ courseGoal }}</p> <!-- {{ }} syntax only between HTML tags like <p></p> -->
-      <p>Learn More <a v-bind:href="vueLink">about Vue</a></p> <!-- v-bind - inside HTML tags -->
+      <p>{{ outputGoal() }}</p> <!-- {{ }} interpolation syntax only between HTML tags like <p></p> -->
+      <p>{{ 1 + 1 }}</p> <!-- Can execute simple JS like math expressions -->
+      <p>{{ Math.random() }}</p>
+      <p>{{ myVar = 2 ? 'yes' : 'no' }}</p>
+      <p>Learn More <a v-bind:href="vueLink">about Vue</a></p> <!-- v-bind - inside HTML tags (binding syntax) -->
     </section>
   </body>
 </html>
