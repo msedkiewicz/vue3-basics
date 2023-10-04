@@ -18,7 +18,8 @@
     </header>
     <section id="user-goal">
       <h2>My Course Goal</h2>
-      <p>{{ outputGoal() }}</p> <!-- {{ }} interpolation syntax only between HTML tags like <p></p> -->
+      <p>{{ outputGoal() }}</p><!-- {{ }} interpolation syntax only between HTML tags like <p></p> -->
+      <p v-html="outputGoal()"></p><!-- use carefully due to security reasons - possibility of  (XSS)-->
       <p>{{ 1 + 1 }}</p> <!-- Can execute simple JS like math expressions -->
       <p>{{ Math.random() }}</p>
       <p>{{ myVar = 2 ? 'yes' : 'no' }}</p>
