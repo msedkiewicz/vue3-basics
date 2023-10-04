@@ -6,8 +6,8 @@ const app = Vue.createApp({
         };
     },
     methods: {
-        outputGoal: function() {
-            
+        outputGoal() {
+
         }
     }
 });
