@@ -24,9 +24,8 @@
       <p>{{ Math.random() }}</p>
       <div>
         <!-- 5) Display some image you found via Google -->
-        <img src="SOME IMAGE URL" />
+        <img v-bind:src="imgSunrise" />
       </div>
-      <!-- 6) Prepopulate the input field with your name via the "value" attribute -->
       <input type="text" v-bind:value="myName" />
     </section>
   </body>
