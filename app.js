@@ -1,10 +1,15 @@
 const app = Vue.createApp({
   data() {
-    return {};
+    return {
+      inputOne: "",
+    };
   },
   methods: {
     buttonClick() {
       alert("Howdy!");
+    },
+    setInputOne(event) {
+      this.inputOne = event.target.value;
     },
   },
 });
