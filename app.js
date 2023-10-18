@@ -3,6 +3,8 @@ const app = Vue.createApp({
     return {
       inputOne: "",
       confirmedInputOne: "",
+      inputTwo: "",
+      confirmedInputTwo: "",
     };
   },
   methods: {
@@ -14,6 +16,12 @@ const app = Vue.createApp({
     },
     confirmInputOne() {
       this.confirmedInputOne = this.inputOne;
+    },
+    setInputTwo(event) {
+      this.inputTwo = event.target.value;
+    },
+    confirmInputTwo() {
+      this.confirmedInputTwo = this.inputTwo;
     },
   },
 });
