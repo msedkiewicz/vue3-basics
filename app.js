@@ -5,7 +5,16 @@ const app = Vue.createApp({
       name: ''
     };
   },
-  methods: {
+  computed: { // recalculate when dependency change
+    fullName() {
+      console.log('Test')
+      if (this.name === '') {
+        return '';
+      }
+      return this.name + ' ' + 'Schwarzmueller';
+    }
+  },
+  methods: { // use only if you want to recalculate values on the page whenever anything change on page + in case of events
     setName(event, lastName) {
       this.name = event.target.value;
     },
@@ -19,7 +28,6 @@ const app = Vue.createApp({
       this.name = "";
     },
     outputFullname() {
-      console.log('Running again') // checking if function is run again - Vue runs again every function when something changes, even if not connected to it
       if (this.name === '') {
         return '';
       }
