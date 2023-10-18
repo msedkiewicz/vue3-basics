@@ -2,6 +2,7 @@ const app = Vue.createApp({
   data() {
     return {
       inputOne: "",
+      confirmedInputOne: "",
     };
   },
   methods: {
@@ -10,6 +11,9 @@ const app = Vue.createApp({
     },
     setInputOne(event) {
       this.inputOne = event.target.value;
+    },
+    confirmInputOne() {
+      this.confirmedInputOne = this.inputOne;
     },
   },
 });
