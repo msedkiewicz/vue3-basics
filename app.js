@@ -19,6 +19,7 @@ const app = Vue.createApp({
       this.name = "";
     },
     outputFullname() {
+      console.log('Running again') // checking if function is run again - Vue runs again every function when something changes, even if not connected to it
       if (this.name === '') {
         return '';
       }
