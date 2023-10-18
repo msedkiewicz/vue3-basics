@@ -2,7 +2,11 @@ const app = Vue.createApp({
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    buttonClick() {
+      alert("Howdy!");
+    },
+  },
 });
 
 app.mount("#assignment");
