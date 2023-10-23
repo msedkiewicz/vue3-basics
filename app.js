@@ -3,34 +3,34 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
-      fullname: '',
+      // fullname: '',
       lastname: '',
     };
   },
-  watch: {
-    name(value) {
-      if (value === '') {
-        this.fullname = '';
-      } else {
-        this.fullname = value + ' ' + this.lastname;
-      } // [problematic with more complex data]
-    },
-    lastname(value) {
-      if (value === '') {
-        this.fullname = '';
-      } else {
-        this.fullname = this.name + ' ' + value;
-      }
-    }
-  },
+  // watch: {
+  //   name(value) {
+  //     if (value === '') {
+  //       this.fullname = '';
+  //     } else {
+  //       this.fullname = value + ' ' + this.lastname;
+  //     } // [problematic with more complex data]
+  //   },
+  //   lastname(value) {
+  //     if (value === '') {
+  //       this.fullname = '';
+  //     } else {
+  //       this.fullname = this.name + ' ' + value;
+  //     }
+  //   }
+  // },
   computed: { // recalculate when dependency change
-    // fullname() {
-    //   console.log('Test')
-    //   if (this.name === '') {
-    //     return '';
-    //   }
-    //   return this.name + ' ' + 'Schwarzmueller';
-    // }
+    fullname() {
+      console.log('Test')
+      if (this.name === '' && this.lastname === '') {
+        return '';
+      }
+      return this.name + ' ' + this.lastname;
+    }
   },
   methods: { // use only if you want to recalculate values on the page whenever anything change on page + in case of events
     setName(event, lastName) {
