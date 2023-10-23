@@ -10,6 +10,7 @@ const app = Vue.createApp({
   watch: { // occasional updates
     counter(value) {
       if (value > 50) {
+        setTimeout( function() {console.log('Hi!')}, 2000);
         this.counter = 0;
       }
     }
