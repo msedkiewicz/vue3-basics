@@ -4,15 +4,23 @@ const app = Vue.createApp({
       counter: 0,
       name: '',
       fullname: '',
+      lastname: '',
     };
   },
   watch: {
     name(value) {
-      if (this.name === '') {
+      if (value === '') {
         this.fullname = '';
       } else {
-        this.fullname = value + ' ' + 'Schwarzmueller';
+        this.fullname = value + ' ' + this.lastname;
       } // [problematic with more complex data]
+    },
+    lastname(value) {
+      if (value === '') {
+        this.fullname = '';
+      } else {
+        this.fullname = this.name + ' ' + value;
+      }
     }
   },
   computed: { // recalculate when dependency change
