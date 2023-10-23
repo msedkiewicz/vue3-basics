@@ -7,7 +7,12 @@ const app = Vue.createApp({
       lastname: '',
     };
   },
-  // watch: {
+  watch: { // occasional updates
+    counter(value) {
+      if (value > 50) {
+        this.counter = 0;
+      }
+    }
   //   name(value) {
   //     if (value === '') {
   //       this.fullname = '';
@@ -22,7 +27,7 @@ const app = Vue.createApp({
   //       this.fullname = this.name + ' ' + value;
   //     }
   //   }
-  // },
+  },
   computed: { // recalculate when dependency change
     fullname() {
       console.log('Test')
