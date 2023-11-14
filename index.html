@@ -25,7 +25,7 @@
         <li v-for="goal in goals">{{ goal }}</li>
       </ul>
       <ul>
-        <li v-for="value in {name: 'Lena', nickname: 'Phoenix', wordpress: 3}">{{ value }}</li>
+        <li v-for="(value, key, index) in {name: 'Lena', nickname: 'Phoenix', wordpress: 3}">{{ index }} <br> {{ key }}: {{ value }}</li>
       </ul>
     </section>
   </body>
