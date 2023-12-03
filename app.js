@@ -2,12 +2,16 @@ const app = Vue.createApp({
     data() {
         return {
             enteredValue: '',
-            tasks: []
+            tasks: [],
+            isTaskListVisible: true
         };
     },
     methods: {
         addTask() {
             this.tasks.push(this.enteredValue);
+        },
+        toggleTaskList() {
+            this.isTaskListVisible = !this.isTaskListVisible;
         }
     }
 });
