@@ -8,7 +8,6 @@ const app = Vue.createApp({
     methods: {
         addTask() {
             this.tasks.push(this.enteredValue);
-            console.log(this.tasks);
         }
     }
 });
