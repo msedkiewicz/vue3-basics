@@ -19,12 +19,19 @@
 
 // vanilla JS is not reactive by default
 
-let message = 'Hello!';
+const data = {
+  message: 'Hello!',
+  longMessage: 'Hello! World!'
+};
 
-let longMessage = message + ' World!';
+const handler = {
+  set(target, key, value) {
+    console.log(target);
+    console.log(key);
+    console.log(value);
+  }
+}
 
-console.log(longMessage);
+const proxy = new Proxy(data, handler);
 
-message = 'Hello';
-
-console.log(longMessage);
+proxy.message = 'Helloooo!!!!';
