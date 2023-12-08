@@ -18,6 +18,7 @@ const app = Vue.createApp({ // first template of Vue app
 app.mount('#app');
 
 const app2 = Vue.createApp({ // second template of Vue app
+  template: `<p>{{ favoriteMeal }}</p>`,
   data() {
     return {
       favoriteMeal: 'lasagna'
