@@ -1,4 +1,4 @@
-const app = Vue.createApp({
+const app = Vue.createApp({ // first template of Vue app
   data() {
     return {
       currentUserInput: '',
@@ -17,7 +17,7 @@ const app = Vue.createApp({
 
 app.mount('#app');
 
-const app2 = Vue.createApp({
+const app2 = Vue.createApp({ // second template of Vue app
   data() {
     return {
       favoriteMeal: 'lasagna'
