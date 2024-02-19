@@ -18,23 +18,44 @@
     </header>
     <section id="app">
       <ul>
-        <li>
-          <h2>Manuel Lorenz</h2>
+        <li v-for="friend in friends" :key="friend.id">
+          <h2>{{ friend.name }}</h2>
           <button>Show Details</button>
           <ul>
-            <li><strong>Phone:</strong> 01234 5678 991</li>
-            <li><strong>Email:</strong> manuel@localhost.com</li>
-          </ul>
-        </li>
-        <li>
-          <h2>Julie Jones</h2>
-          <button>Show Details</button>
-          <ul>
-            <li><strong>Phone:</strong> 09876 543 221</li>
-            <li><strong>Email:</strong> julie@localhost.com</li>
+            <li><strong>Phone:</strong>{{ friend.phone }}</li>
+            <li><strong>Email:</strong> {{ friend.email }}</li>
           </ul>
         </li>
       </ul>
     </section>
+    <script type="module">
+      import {
+        createApp,
+        ref,
+      } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      const app = createApp({
+        data() {
+          return {
+            friends: [
+              {
+                id: "manuel",
+                name: "Manuel Lorenz",
+                phone: "01234 5678 991",
+                email: "manuel@localhost.com",
+              },
+              {
+                id: "julie",
+                name: "Julie Jones",
+                phone: "09876 543 221",
+                email: "julie@localhost.com",
+              },
+            ],
+          };
+        },
+      });
+
+      app.mount("#app");
+    </script>
   </body>
 </html>
