@@ -17,18 +17,7 @@
       <h1>FriendList</h1>
     </header>
     <section id="app">
-      <ul>
-        <li v-for="friend in friends" :key="friend.id">
-          <h2>{{ friend.name }}</h2>
-          <button @click="toggleDetails">
-            {{detailsAreVisible ? 'Hide' : 'Show' }} Details
-          </button>
-          <ul v-if="detailsAreVisible">
-            <li><strong>Phone:</strong>{{ friend.phone }}</li>
-            <li><strong>Email:</strong> {{ friend.email }}</li>
-          </ul>
-        </li>
-      </ul>
+      <ul><friend-contact></friend-contact></friend></ul>
     </section>
     <script type="module">
       import {
@@ -57,8 +46,26 @@
         },
       });
       app.component("friend-contact", {
+        template: `<li>
+          <h2>{{ friend.name }}</h2>
+          <button @click="toggleDetails">
+            {{detailsAreVisible ? 'Hide' : 'Show' }} Details
+          </button>
+          <ul v-if="detailsAreVisible">
+            <li><strong>Phone:</strong>{{ friend.phone }}</li>
+            <li><strong>Email:</strong> {{ friend.email }}</li>
+          </ul>
+        </li>`,
         data() {
-          return { detailsAreVisible: false };
+          return {
+            detailsAreVisible: false,
+            friend: {
+              id: "manuel",
+              name: "Manuel Lorenz",
+              phone: "01234 5678 991",
+              email: "manuel@localhost.com",
+            },
+          };
         },
         methods: {
           toggleDetails() {
