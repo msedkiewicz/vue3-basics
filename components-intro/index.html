@@ -39,7 +39,6 @@
       const app = createApp({
         data() {
           return {
-            detailsAreVisible: false,
             friends: [
               {
                 id: "manuel",
@@ -55,6 +54,11 @@
               },
             ],
           };
+        },
+      });
+      app.component("friend-contact", {
+        data() {
+          return { detailsAreVisible: false };
         },
         methods: {
           toggleDetails() {
