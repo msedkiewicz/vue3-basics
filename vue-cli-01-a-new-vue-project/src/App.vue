@@ -4,8 +4,16 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact
+        name="Lorem ipsum"
+        phone-number="123123123"
+        email-address="lorem@ipsum.pl"
+      ></friend-contact>
+      <friend-contact
+        name="Lorem ipsum2"
+        phone-number="123456123"
+        email-address="lorem@ipsum.pl"
+      ></friend-contact>
     </ul>
   </section>
 </template>
